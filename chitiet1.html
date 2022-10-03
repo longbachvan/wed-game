@@ -1,0 +1,101 @@
+
+
+<h2 style="text-align:center">Chi Tiết Sản Phẩm</h2>
+	<link rel="stylesheet" href="style1.css">
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 5</div>
+    <img src="ys.jpg" style=width="1000px"; height="400px">
+  </div>
+<div class="content_btn">
+
+            </div>
+  <div class="mySlides">
+    <div class="numbertext">2 / 5</div>
+    <img src="zed.png" style=width="500px"; height="400px">
+	  <span>300rp </span>
+                <button>Mua Ngay</button>
+            
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 5</div>
+    <img src="vayne.png" style="width:400px" height="300">
+	  <span>499rp  </span>
+                <button>Mua Ngay</button>
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 5</div>
+    <img src="sylas1.jpg" style=width="1000px"; height="400px">
+	  <span>250rp </span>
+                <button>Mua Ngay</button>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 /5</div>
+    <img src="kata.png" style=width="1000px"; height="400px">
+	  <span>299rp </span>
+                <button>Mua Ngay</button>
+  </div>
+  
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="ys.jpg" style="width:100px" onclick="currentSlide(1)" alt="yasuo siêu phẩm">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="zed.png" style="width:100px" onclick="currentSlide(2)" alt="Zed siêu phẩm">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="vayne.png" style="width:100px" onclick="currentSlide(3)" alt="Vayne siêu phẩm">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="sylas1.jpg" style="width:100px" onclick="currentSlide(4)" alt="Sylat siêu phẩm">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="kata.png" style="width:100px" onclick="currentSlide(5)" alt=Katarina siêu phẩm">
+    </div>    
+    
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
